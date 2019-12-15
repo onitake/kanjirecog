@@ -26,8 +26,6 @@ import javax.xml.parsers.*;
 import org.xml.sax.*;
 import org.xml.sax.helpers.DefaultHandler;
 
-import com.leafdigital.kanji.KanjiInfo.MatchAlgorithm;
-
 /**
  * Stores list of all {@link KanjiInfo} objects loaded, organised by
  * stroke count.
@@ -165,6 +163,26 @@ public class KanjiList
 	}
 
 	/**
+	 * @param search Kanji to find
+	 * @return Info for that kanji
+	 * @throws IllegalArgumentException If kanji does not exist in list
+	 */
+	public synchronized KanjiInfo find(String search)
+	{
+		for(List<KanjiInfo> list : kanji.values())
+		{
+			for(KanjiInfo info : list)
+			{
+				if(info.getKanji().equals(search))
+				{
+					return info;
+				}
+			}
+		}
+		throw new IllegalArgumentException("Kanji '" + search + "' not found");
+	}
+
+	/**
 	 * Searches for closest matches.
 	 * @param compare Kanji to compare
 	 * @param algo Match algorithm to use
@@ -172,86 +190,53 @@ public class KanjiList
 	 * @return Top matches above search threshold
 	 * @throws IllegalArgumentException If match algorithm not set
 	 */
-	public synchronized KanjiMatch[] getTopMatches(KanjiInfo compare,
+	public KanjiMatch[] getTopMatches(KanjiInfo compare,
 		KanjiInfo.MatchAlgorithm algo, Progress progress)
 		throws IllegalArgumentException
 	{
 		TreeSet<KanjiMatch> matches = new TreeSet<KanjiMatch>();
-		switch(algo)
+
+		List<KanjiInfo> list = new LinkedList<KanjiInfo>();
+		if(compare.getStrokeCount() > 0)
 		{
-		case STRICT:
+			synchronized(this)
 			{
-				List<KanjiInfo> list = kanji.get(compare.getStrokeCount());
-				if(list != null)
+				// Do either -2 and +2, -1 and +1, or just 0
+				int range = algo.getOut();
+				int count = compare.getStrokeCount() - range;
+				for(int i=0; i<2; i++)
 				{
-					int max = list.size();
-					if(progress != null)
+					if(count > 0)
 					{
-						progress.progress(0, max);
+						List<KanjiInfo> countList = kanji.get(count);
+						if(countList != null)
+						{
+							list.addAll(countList);
+						}
 					}
-					int i = 0;
-					for(KanjiInfo other : list)
+					count += 2 * range;
+					if (range == 0)
 					{
-						float score = compare.getMatchScore(other, algo);
-						if(score > 0)
-						{
-							KanjiMatch match = new KanjiMatch(other, score);
-							matches.add(match);
-						}
-						if(progress != null)
-						{
-							progress.progress(++i, max);
-						}
+						break;
 					}
 				}
-			} break;
-		case FUZZY:
-		case FUZZY_1OUT:
-		case FUZZY_2OUT:
+			}
+		}
+		int max = list.size();
+		if(progress != null)
+		{
+			progress.progress(0, max);
+		}
+		int i = 0;
+		for(KanjiInfo other : list)
+		{
+			float score = compare.getMatchScore(other, algo);
+			KanjiMatch match = new KanjiMatch(other, score);
+			matches.add(match);
+			if(progress != null)
 			{
-				List<KanjiInfo> list = new LinkedList<KanjiInfo>();
-				if(compare.getStrokeCount() > 0)
-				{
-					// Do either -2 and +2, -1 and +1, or just 0
-					int range = (algo==MatchAlgorithm.FUZZY_2OUT) ? 2
-						: (algo==MatchAlgorithm.FUZZY_1OUT) ? 1 : 0;
-					int count = compare.getStrokeCount() - range;
-					for(int i=0; i<2; i++)
-					{
-						if(count > 0)
-						{
-							List<KanjiInfo> countList = kanji.get(count);
-							if(countList != null)
-							{
-								list.addAll(countList);
-							}
-						}
-						count += 2 * range;
-						if (range == 0)
-						{
-							break;
-						}
-					}
-				}
-				int max = list.size();
-				if(progress != null)
-				{
-					progress.progress(0, max);
-				}
-				int i = 0;
-				for(KanjiInfo other : list)
-				{
-					float score = compare.getMatchScore(other, algo);
-					KanjiMatch match = new KanjiMatch(other, score);
-					matches.add(match);
-					if(progress != null)
-					{
-						progress.progress(++i, max);
-					}
-				}
-			} break;
-		default:
-			throw new IllegalArgumentException("Unknown algorithm");
+				progress.progress(++i, max);
+			}
 		}
 
 		// Pull everything down to half match score

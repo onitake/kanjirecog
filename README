@@ -24,6 +24,8 @@ Build instructions
 This project should work when installed into Google's Eclipse-based
 Android development system.
 
+An Android app based on this library is included in this repository in
+the branch 'android'.
 
 Repository information
 ----------------------
