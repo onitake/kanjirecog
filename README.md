@@ -1,7 +1,13 @@
 leafdigital kanjirecog
 ----------------------
 
+![F-Droid](https://img.shields.io/f-droid/v/com.leafdigital.kanji.android.svg?logo=f-droid)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/onitake/kanjirecog?logo=github)
+
+[![F-Droid](https://f-droid.org/badge/get-it-on.png)](https://f-droid.org/en/packages/com.leafdigital.kanji.android/)
+
 Copyright 2011 Samuel Marshall
+
 Forked for re-inclusion into F-Droid 2019 by Gregor Riepl
 
 Released under GNU Public License v3 (see LICENSE)
