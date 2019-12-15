@@ -2,6 +2,7 @@ leafdigital kanjirecog
 ----------------------
 
 Copyright 2011 Samuel Marshall
+Forked for re-inclusion into F-Droid 2019 by Gregor Riepl
 
 Released under GNU Public License v3 (see LICENSE)
 
@@ -12,8 +13,12 @@ Java library.
 Trying it out
 -------------
 
-You can try out this Android app from the Android Market. Search for
-'kanji draw'.
+This app is available on F-Droid:
+
+https://f-droid.org/en/packages/com.leafdigital.kanji.android/
+
+The original app version 1.0 can still be downloaded from the Android Market.
+Search for 'kanji draw'.
 
 https://market.android.com/details?id=com.leafdigital.kanji.android
 
