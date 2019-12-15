@@ -2,7 +2,7 @@ leafdigital kanjirecog
 ----------------------
 
 ![F-Droid](https://img.shields.io/f-droid/v/com.leafdigital.kanji.android.svg?logo=f-droid)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/onitake/kanjirecog?logo=github)
+![GitHub](https://img.shields.io/github/v/tag/onitake/kanjirecog?logo=github)
 
 [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" height="75">](https://f-droid.org/en/packages/com.leafdigital.kanji.android/)
 
