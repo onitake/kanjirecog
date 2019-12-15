@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.leafdigital.kanji.android"
-      android:versionCode="2" android:versionName="1.0">
+      android:versionCode="3" android:versionName="2.0">
     <uses-sdk android:minSdkVersion="4" />
     <supports-screens android:smallScreens="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:anyDensity="true"></supports-screens>
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
