@@ -8,7 +8,7 @@ Copyright © 2019 by Gregor Riepl.
 
 Released under the GNU Public License v3 (see LICENSE).
 Some icon files are taken from the Android SDK and are licensed under the Apache 2.0 license.
-Stroke order data is licensed under the Creative Commons Attribution-Share Alike 3.0 License.
+Stroke order data is licensed under the Creative Commons Attribution-Share Alike 3.0 license.
 
 ## Trying it out
 

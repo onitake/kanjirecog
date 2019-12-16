@@ -7,7 +7,7 @@
 	<string name="explanation">After you copy the kanji, long-press any text
 		field in any app and choose Paste to enter the kanji.</string>
 	<string name="menuhint">Press MENU key for settings.</string>
-	<string name="copyright">leafdigital Kanji draw &#169; 2011 Samuel Marshall</string>
+	<string name="copyright">Kanji draw &#169; 2019 Gregor Riepl</string>
 
 	<string name="undo">Undo</string>
 	<string name="clear">Clear</string>

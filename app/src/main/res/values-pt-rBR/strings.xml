@@ -7,7 +7,7 @@
 	<string name="explanation">Depois de copiar o kanji, segure em qualquer campo de texto
 		no app e escolha Colar para inserir o kanji.</string>
 	<string name="menuhint">Pressione a tecla MENU para configurações.</string>
-	<string name="copyright">leafdigital Kanji draw &#169; 2011 Samuel Marshall</string>
+	<string name="copyright">Kanji draw &#169; 2019 Gregor Riepl</string>
 
 	<string name="undo">Desfazer</string>
 	<string name="clear">Limpar</string>
