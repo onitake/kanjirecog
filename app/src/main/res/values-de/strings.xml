@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kanji draw</string>
+    <string name="clear">Löschen</string>
+    <string name="copy">Kopieren und schließen</string>
+    <string name="copyright">Kanji draw © 2019 Gregor Riepl</string>
+    <string name="done">Fertig</string>
+    <string name="drawkanji">Kanji hinzufügen</string>
+    <string name="explanation">Nach dem Kopieren kann das Kanji in ein beliebiges Textfeld eingefügt werden. Dazu auf dem Textfeld gedrückt halten und dann \"Einfügen\" auswählen.</string>
+    <string name="fuzzy">Ungenaue Treffer</string>
+    <string name="giveup">Aufgeben</string>
+    <string name="menuhint">Die Menütaste zum Aufrufen der Einstellungen anwählen.</string>
+    <string name="more">Mehr</string>
+    <string name="notification">Schnellzugriffs-Symbol</string>
+    <string name="notificationchannel">Kanji draw</string>
+    <string name="notificationtext">Anwählen zum Zeichnen von Kanji</string>
+    <string name="notificationtitle">Kanji zeichnen</string>
+    <string name="pickexact">Genaue Treffer (Anz. Striche)</string>
+    <string name="pickexact1">Genaue Treffer (1 Strich)</string>
+    <string name="pickfuzzy">Ungenaue Treffer (Anz. Striche)</string>
+    <string name="pickfuzzy1">Ungenaue Treffer (1 Strich)</string>
+    <string name="pickfuzzy1pm1">Ungenaue Treffer (2 Striche)</string>
+    <string name="pickfuzzypm1">Ungenaue Treffer (Anz. Striche ±1)</string>
+    <string name="plusminus1">Ungenaue Treffer (±1 Strich)</string>
+    <string name="preferencestitle">Einstellungen</string>
+    <string name="privacy">Privatsphäre</string>
+    <string name="quit">Beenden</string>
+    <string name="reportstats">Zeichnungsdaten übertragen</string>
+    <string name="reportstats_off">Es werden keine Informationen an den Entwickler übermittelt</string>
+    <string name="reportstats_on">Sofern eine Internetverbindung verfügbar ist, werden Zeichnungsdaten zur Verbesserung der App an live.leafdigital.com übertragen.</string>
+    <string name="settings">Einstellungen</string>
+    <string name="shownotification">Symbol in der Titelleiste anzeigen</string>
+    <string name="shownotification_off">Das App-Symbol wird nicht in der Titelleiste angezeigt.</string>
+    <string name="shownotification_on">Durch Auswahl des App-Symbols in der Titelleiste können direkt Kanji in andere Apps eingefügt werden.</string>
+    <string name="startwithsystem">Mit dem Telefon starten</string>
+    <string name="startwithsystem_off">Das App-Symbol wird erst angezeigt, wenn Kanji Draw gestartet wurde.</string>
+    <string name="startwithsystem_on">Beim Start des Telefons wird das App-Symbol automatisch angezeigt.</string>
+    <string name="strokes">Striche</string>
+    <string name="undo">Rückgängig</string>
+    <string name="waitexact">Suche exakte Treffer…</string>
+    <string name="waitfuzzy">Suche ungenaue Treffer…</string>
+</resources>
