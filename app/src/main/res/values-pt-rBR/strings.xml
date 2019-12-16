@@ -14,10 +14,10 @@
 	<string name="strokes">Tentativas</string>
 	<string name="done">Pronto</string>
 	<string name="fuzzy">Correspondências Inexatas</string>
-	<string name="waitexact">Procurando correspondências exatas...</string>
+	<string name="waitexact">Procurando correspondências exatas…</string>
 	<string name="pickexact">Correspondências exatas (# tentativas)</string>
 	<string name="pickexact1">Correspondência exata (1 tentativa)</string>
-	<string name="waitfuzzy">Procurando correspondências inexatas...</string>
+	<string name="waitfuzzy">Procurando correspondências inexatas…</string>
 	<string name="pickfuzzy">Correspondências inexatas (# tentativas)</string>
 	<string name="pickfuzzy1">Correspondência inexata (1 tentativa)</string>
 	<string name="more">Mais</string>
