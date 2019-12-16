@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':lib')
+}
+
+sourceCompatibility = "6"
+targetCompatibility = "6"
+
+mainClassName = "com.leafdigital.convert.KanjiVGConverter"
