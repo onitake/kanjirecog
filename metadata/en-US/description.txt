@@ -1,0 +1,26 @@
+A simple application that lets you draw Japanese characters (kanji) using the
+touch screen. It is intended for Japanese language learners who might need to
+enter characters in order to look them up in a dictionary or enter them on a
+website.
+
+It identifies the character you have drawn using a special form of handwriting
+recognition. You can select the correct character from a list. After entering
+one or more characters, you can copy them into the clipboard as text for use in
+a dictionary.
+
+Note that this will NOT work - at all - if you don't know basically how to draw
+kanji. If you just draw something any old way that looks like it, it certainly
+won't be recognised. You have to draw characters basically the official way.
+
+This is a fork of the Kanji draw application from https://github.com/quen/kanjirecog/
+which is no longer maintained and was removed from F-Droid.
+
+The original application had data collection features enabled by default.
+They have been disabled in this version, but can still be enabled from the
+settings. It is not guaranteed that the collection service will still work,
+as it is not under the control of the fork's author.
+
+Two of the included icons were taken from the Android SDK and are licensed
+under the Apache License 2.0. The kanji stroke data is based on the KanjiVG data
+set from http://kanjivg.tagaini.net/  and licensed under the
+Creative Commons Attribution-Share Alike 3.0 license.

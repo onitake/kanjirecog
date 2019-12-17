@@ -1,0 +1,4 @@
+* Updated KanjiVG database to version 20160426
+* New Brazilian Portuguese and German translations
+* Improved compatibility with Android 8.0 and later
+* Disabled data collection anti-feature by default, it can still be enabled by users on demand

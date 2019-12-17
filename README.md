@@ -47,7 +47,8 @@ Then, use the provided conversion tool to convert the SVG graphics into our inte
 * `data` downloaded kanji stroke data
 * `lib` the kanji recognizer
 * `converter` stroke file conversion tool
-* `android` the Android application
+* `app` the Android application
+* `metadata` application metadata, compatible with fastlane and F-Droid
 
 ## Repository information
 
