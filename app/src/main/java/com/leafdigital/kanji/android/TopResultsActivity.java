@@ -29,7 +29,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.leafdigital.kanji.*;
-import com.leafdigital.kanji.android.KanjiDrawing.DrawnStroke;
 
 public class TopResultsActivity extends KanjiActivity
 {

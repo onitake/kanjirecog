@@ -32,7 +32,6 @@ import android.widget.*;
 
 import com.leafdigital.kanji.*;
 import com.leafdigital.kanji.KanjiInfo.MatchAlgorithm;
-import com.leafdigital.kanji.android.KanjiDrawing.DrawnStroke;
 
 import static com.leafdigital.kanji.android.TopResultsActivity.*;
 
