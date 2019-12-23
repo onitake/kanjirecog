@@ -20,11 +20,16 @@ package com.leafdigital.kanji.android;
 
 import java.util.LinkedList;
 
-import android.app.Activity;
-import android.content.Intent;
+import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.*;
+import android.graphics.drawable.ColorDrawable;
+import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.*;
+
+import androidx.annotation.Nullable;
 
 public class KanjiDrawing extends View
 {
@@ -36,6 +41,8 @@ public class KanjiDrawing extends View
 	public final static int MAX_STROKES = 30;
 
 	private final static float BLOB_RADIUS_DP = 2.5f;
+	private final static int DEFAULT_BACKGROUND_COLOR = Color.HSVToColor(new float[] {100f, 0.05f, 0.15f});
+	private final static int DEFAULT_FOREGROUND_COLOR = Color.WHITE;
 
 	private float lastX, lastY;
 
@@ -49,6 +56,18 @@ public class KanjiDrawing extends View
 	private LinkedList<Bitmap> undo = new LinkedList<Bitmap>();
 
 	private Listener listener;
+	private Paint drawPaint;
+
+	public void setStrokeColor(int color) {
+		if (drawPaint == null) {
+			drawPaint = new Paint();
+		}
+		drawPaint.setColor(color);
+	}
+
+	public int getStrokeColor() {
+		return drawPaint.getColor();
+	}
 
 	/**
 	 * Interface for callers that want to be informed of updates.
@@ -63,16 +82,45 @@ public class KanjiDrawing extends View
 		public void strokes(DrawnStroke[] strokes);
 	}
 
-
-
-	public KanjiDrawing(Activity context)
-	{
+	public KanjiDrawing(Context context) {
 		super(context);
-		DisplayMetrics metrics = new DisplayMetrics();
-		context.getWindowManager().getDefaultDisplay().getMetrics(metrics);
+		DisplayMetrics metrics = context.getResources().getDisplayMetrics();
 		density = metrics.density;
 		densityInt = metrics.densityDpi;
+		setBackgroundColor(DEFAULT_BACKGROUND_COLOR);
+		setStrokeColor(DEFAULT_FOREGROUND_COLOR);
 	}
+
+	public KanjiDrawing(Context context, @Nullable AttributeSet attrs) {
+		this(context, attrs, 0);
+	}
+
+	public KanjiDrawing(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+		super(context, attrs, defStyleAttr);
+		DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+		density = metrics.density;
+		densityInt = metrics.densityDpi;
+		TypedArray customattrs = context.getTheme().obtainStyledAttributes(attrs, R.styleable.KanjiDrawing, defStyleAttr, 0);
+		setStrokeColor(customattrs.getColor(R.styleable.KanjiDrawing_strokeColor, DEFAULT_FOREGROUND_COLOR));
+	}
+
+	// Requires API level >= 21
+	/*public KanjiDrawing(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+		super(context, attrs, defStyleAttr, defStyleRes);
+		DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+		density = metrics.density;
+		densityInt = metrics.densityDpi;
+		TypedArray customattrs = context.getTheme().obtainStyledAttributes(attrs, R.styleable.KanjiDrawing, defStyleAttr, defStyleRes);
+		setStrokeColor(customattrs.getColor(R.styleable.KanjiDrawing_strokeColor, DEFAULT_FOREGROUND_COLOR));
+	}*/
+
+	/*@Override
+	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+		int specMode = MeasureSpec.getMode(heightMeasureSpec);
+		int specSize = MeasureSpec.getSize(heightMeasureSpec);
+		Log.d(getClass().getName(), String.format("height_measure=%d mode=%d size=%d min_height=%d default_height=%d", heightMeasureSpec, specMode, specSize, getSuggestedMinimumHeight(), getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec)));
+		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+	}*/
 
 	@Override
 	protected void onDraw(Canvas canvas)
@@ -86,11 +134,11 @@ public class KanjiDrawing extends View
 		}
 
 		// Draw background colour
-		canvas.drawColor(Color.HSVToColor(new float[] {100f, 0.05f, 0.15f}));
+		//canvas.drawColor(((ColorDrawable) getBackground()).getColor());
+		getBackground().draw(canvas);
 
-		Paint fg = new Paint();
-		fg.setColor(Color.WHITE);
-		canvas.drawBitmap(bitmap, 0, 0, fg);
+		// Draw
+		canvas.drawBitmap(bitmap, 0, 0, drawPaint);
 	}
 
 	@Override
@@ -205,7 +253,7 @@ public class KanjiDrawing extends View
 	 */
 	public DrawnStroke[] getStrokes()
 	{
-		return strokes.toArray(new DrawnStroke[strokes.size()]);
+		return strokes.toArray(new DrawnStroke[0]);
 	}
 
 	/**
