@@ -63,10 +63,6 @@
         <service
             android:name=".IconService"
             android:icon="@drawable/statusicon" />
-
-        <service android:name=".LookupService"
-            android:exported="false"
-            />
     </application>
 
 </manifest>
