@@ -48,4 +48,5 @@
     <string name="input_method_label">Kanji draw keyboard</string>
     <string name="loaderror">Can\'t load kanji list</string>
     <string name="backspace">Back</string>
+	<string name="enter">Return</string>
 </resources>

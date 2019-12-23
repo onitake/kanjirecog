@@ -2,8 +2,10 @@ package com.leafdigital.kanji.android;
 
 import android.inputmethodservice.InputMethodService;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.Button;
 import android.widget.TextView;
@@ -58,6 +60,14 @@ public class KanjiDrawIME extends InputMethodService implements AsyncKanjiList.K
             public void onClick(View v) {
                 InputConnection ic = getCurrentInputConnection();
                 ic.deleteSurroundingText(1, 0);
+            }
+        });
+        final Button returnButton = inputView.findViewById(R.id.enter);
+        returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                InputConnection ic = getCurrentInputConnection();
+                ic.performEditorAction(EditorInfo.IME_ACTION_NEXT);
             }
         });
 
@@ -128,6 +138,8 @@ public class KanjiDrawIME extends InputMethodService implements AsyncKanjiList.K
             public void onClick(View v) {
                 InputConnection ic = getCurrentInputConnection();
                 ic.commitText(match, 1);
+                // clear when the user has selected a candidate
+                drawView.clear();
             }
         });
         return ret;

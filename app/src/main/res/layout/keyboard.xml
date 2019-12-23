@@ -56,6 +56,13 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/backspace" />
+
+            <Button
+                android:id="@+id/enter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/enter" />
         </LinearLayout>
 
         <com.leafdigital.kanji.android.KanjiDrawing
