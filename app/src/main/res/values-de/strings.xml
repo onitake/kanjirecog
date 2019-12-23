@@ -39,4 +39,7 @@
     <string name="undo">Rückgängig</string>
     <string name="waitexact">Suche exakte Treffer…</string>
     <string name="waitfuzzy">Suche ungenaue Treffer…</string>
+    <string name="backspace">Rück</string>
+    <string name="input_method_label">Kanji draw-Tastatur</string>
+    <string name="loaderror">Fehler beim Laden der Kanjiliste</string>
 </resources>

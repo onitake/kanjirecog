@@ -45,4 +45,7 @@
 	<string name="notificationtitle">Draw kanji</string>
 	<string name="notificationtext">Select to draw kanji characters</string>
     <string name="notificationchannel">Kanji draw</string>
+    <string name="input_method_label">Kanji draw keyboard</string>
+    <string name="loaderror">Can\'t load kanji list</string>
+    <string name="backspace">Back</string>
 </resources>

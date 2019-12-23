@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="keyboard_height" type="dimen">255sp</dimen>
+    <dimen name="picker_height">36sp</dimen>
+    <dimen name="candidate_padding">12sp</dimen>
+    <dimen name="candidate_text_size">20sp</dimen>
+</resources>

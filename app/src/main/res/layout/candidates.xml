@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:id="@+id/matches"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/picker_height"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <include layout="@layout/candidatebutton" />
+    </LinearLayout>
+</HorizontalScrollView>

@@ -4,34 +4,69 @@
     package="com.leafdigital.kanji.android">
 
     <supports-screens
-        android:smallScreens="true"
+        android:anyDensity="true"
         android:largeScreens="true"
         android:normalScreens="true"
         android:resizeable="true"
-        android:anyDensity="true" />
+        android:smallScreens="true" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
-    <application android:icon="@drawable/icon" android:label="@string/app_name"
-        tools:ignore="GoogleAppIndexingWarning" android:allowBackup="true">
-        <activity android:name=".MainActivity"
-                  android:label="@string/app_name" android:clearTaskOnLaunch="true">
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        tools:ignore="GoogleAppIndexingWarning">
+        <service
+            android:name=".KanjiDrawIME"
+            android:enabled="true"
+            android:exported="true"
+            android:label="@string/input_method_label"
+            android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@xml/method" />
+        </service>
+
+        <activity
+            android:name=".MainActivity"
+            android:clearTaskOnLaunch="true"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="PickKanjiActivity" />
-        <activity android:name="TopResultsActivity" />
-        <activity android:name=".KanjiPreferenceActivity" android:label="@string/preferencestitle" />
-        <receiver android:name="StartupReceiver" android:exported="false" android:permission="android.permission.RECEIVE_BOOT_COMPLETED" android:enabled="false">
+        <activity android:name=".PickKanjiActivity" />
+        <activity android:name=".TopResultsActivity" />
+        <activity
+            android:name=".KanjiPreferenceActivity"
+            android:label="@string/preferencestitle" />
+
+        <receiver
+            android:name=".StartupReceiver"
+            android:enabled="false"
+            android:exported="false"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-        <service android:name="IconService" android:icon="@drawable/statusicon" />
 
+        <service
+            android:name=".IconService"
+            android:icon="@drawable/statusicon" />
+
+        <service android:name=".LookupService"
+            android:exported="false"
+            />
     </application>
+
 </manifest>
