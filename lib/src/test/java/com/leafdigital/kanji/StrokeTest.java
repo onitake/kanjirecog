@@ -109,24 +109,24 @@ public class StrokeTest
 	public void testLocation() throws Exception
 	{
 		Stroke stroke = new Stroke(0.1f, 0.1f, 0.4f, 0.1f);
-		assertEquals(Location.NW, stroke.getStartLocation());
-		assertEquals(Location.N, stroke.getEndLocation());
+		assertEquals(Stroke.Location.NW, stroke.getStartLocation());
+		assertEquals(Stroke.Location.N, stroke.getEndLocation());
 
 		stroke = new Stroke(0.7f, 0.1f, 0.9f, 0.4f);
-		assertEquals(Location.NE, stroke.getStartLocation());
-		assertEquals(Location.E, stroke.getEndLocation());
+		assertEquals(Stroke.Location.NE, stroke.getStartLocation());
+		assertEquals(Stroke.Location.E, stroke.getEndLocation());
 		
 		stroke = new Stroke(0.8f, 0.94f, 0.4f, 0.7f);
-		assertEquals(Location.SE, stroke.getStartLocation());
-		assertEquals(Location.S, stroke.getEndLocation());
+		assertEquals(Stroke.Location.SE, stroke.getStartLocation());
+		assertEquals(Stroke.Location.S, stroke.getEndLocation());
 		
 		stroke = new Stroke(0.2f, 0.9f, 0.3f, 0.5f);
-		assertEquals(Location.SW, stroke.getStartLocation());
-		assertEquals(Location.W, stroke.getEndLocation());
+		assertEquals(Stroke.Location.SW, stroke.getStartLocation());
+		assertEquals(Stroke.Location.W, stroke.getEndLocation());
 
 		stroke = new Stroke(0.4f, 0.4f, 0.6f, 0.6f);
-		assertEquals(Location.MID, stroke.getStartLocation());
-		assertEquals(Location.MID, stroke.getEndLocation());
+		assertEquals(Stroke.Location.MID, stroke.getStartLocation());
+		assertEquals(Stroke.Location.MID, stroke.getEndLocation());
 	}
 	
 	/**
