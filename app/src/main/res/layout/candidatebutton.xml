@@ -4,6 +4,4 @@
     style="?android:attr/borderlessButtonStyle"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:paddingLeft="@dimen/candidate_padding"
-    android:paddingRight="@dimen/candidate_padding"
     android:textSize="@dimen/candidate_text_size" />
