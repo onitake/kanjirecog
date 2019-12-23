@@ -18,13 +18,4 @@
 		/>
 </PreferenceCategory>
 
-<PreferenceCategory android:title="@string/privacy">
-	<CheckBoxPreference
-		android:key="reportstats"
-		android:title="@string/reportstats"
-		android:summaryOff="@string/reportstats_off"
-		android:summaryOn="@string/reportstats_on"
-		/>
-</PreferenceCategory>
-
 </PreferenceScreen>

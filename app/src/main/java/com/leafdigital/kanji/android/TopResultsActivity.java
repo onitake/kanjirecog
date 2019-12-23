@@ -138,25 +138,6 @@ public class TopResultsActivity extends KanjiActivity
 					public void onClick(View v)
 					{
 						setResult(RESULT_OK, data);
-
-						// If selected, report stats
-						SharedPreferences prefs =
-							PreferenceManager.getDefaultSharedPreferences(
-								TopResultsActivity.this);
-						if(prefs.getBoolean(MainActivity.PREF_REPORTSTATS, false))
-						{
-							// If the user has a network connection, send stats
-							ConnectivityManager cm = (ConnectivityManager) getSystemService(
-								Context.CONNECTIVITY_SERVICE);
-							if(cm != null && cm.getActiveNetworkInfo() != null
-								&& cm.getActiveNetworkInfo().isConnected())
-							{
-								StatsReporter.phoneHome(PickKanjiActivity.getKanjiInfo(strokes),
-									data.getStringExtra(PickKanjiActivity.EXTRA_KANJI),
-									algo, ranking, "leafdigital Kanji Draw 0.8", null);
-							}
-						}
-
 						finish();
 					}
 				});
