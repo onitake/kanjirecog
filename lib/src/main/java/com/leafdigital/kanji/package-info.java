@@ -90,21 +90,13 @@ user choice, perhaps you'll then need to run a different match algorithm.
 Otherwise, if the user selects a matched kanji, you now have your answer.
 </p>
 
-<h3>Report statistics (optional)</h3>
+<h3>Report statistics (removed)</h3>
 
 <p>
-If you want to contribute to statistics which might allow this library to
-be improved in future, then once the user has selected a correct kanji,
-you can call the function
-{@link com.leafdigital.kanji.StatsReporter#phoneHome(KanjiInfo, String, KanjiInfo.MatchAlgorithm, int, String, StatsReporter.Callback)}
-which passes information about the user's drawing to the database at
-live.leafdigital.com (if it happens to be available at the time).
-</p>
-
-<p>
-For privacy reasons, it is a good idea to let users opt into
-this facility. Please be ready to upgrade to a new library
-version if requested (in case the URL has to change).
+The recognition library used to include a telemetry callback to
+live.leafdigital.com which was removed in the fork. The fork maintainer
+is not interested in automated data collection of any sort, but you
+are always welcome to share feedback on the project's bug tracker.
 </p>
 */
 package com.leafdigital.kanji;
