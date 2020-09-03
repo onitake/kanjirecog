@@ -1,12 +1,12 @@
 # kanjirecog
 
-![F-Droid](https://img.shields.io/f-droid/v/ch.seto.kanjirecog.svg?logo=f-droid)
-![GitHub](https://img.shields.io/github/v/tag/onitake/kanjirecog?logo=github)
+[![F-Droid](https://img.shields.io/f-droid/v/ch.seto.kanjirecog.svg?logo=f-droid)](https://f-droid.org/en/packages/ch.seto.kanjirecog/)
+[![GitHub](https://img.shields.io/github/v/tag/onitake/kanjirecog?logo=github)](https://github.com/onitake/kanjirecog/releases)
 
 Copyright © 2011 Samuel Marshall.
 Copyright © 2019 by Gregor Riepl.
 
-Released under the GNU Public License v3 (see LICENSE).
+Released under the GNU Public License v3 (see [LICENSE](/LICENSE)).
 Some icon files are taken from the Android SDK and are licensed under the Apache 2.0 license.
 Stroke order data is licensed under the Creative Commons Attribution-Share Alike 3.0 license.
 
@@ -71,7 +71,7 @@ KanjiVG project and released under Creative Commons Attribution-Share Alike 3.0
 license. The original version of this database from the KanjiVG project is in
 the `data` folder, named `kanjivg-<date>.xml`.
 
-KanjiVG home page is: http://kanjivg.tagaini.net/
+The KanjiVG home page is: [https://kanjivg.tagaini.net/](https://kanjivg.tagaini.net/)
 
 In the Android app, two icons from the Android SDK are included (ic_menu_*.png).
 These are licensed under the Apache 2.0 license.
