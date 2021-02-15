@@ -4,9 +4,9 @@
 
 	<string name="drawkanji">Adicionar kanji</string>
 	<string name="copy">Copiar e fechar</string>
-	<string name="explanation">Depois de copiar o kanji, segure em qualquer campo de texto
+	<string name="explanation">Depois de copiar o kanji, faça um toque mais demorado em qualquer campo de texto
 		no app e escolha Colar para inserir o kanji.</string>
-	<string name="menuhint">Pressione a tecla MENU para configurações.</string>
+	<string name="menuhint">Pressione a tecla MENU para configurar.</string>
 	<string name="copyright">Kanji draw &#169; 2019 Gregor Riepl</string>
 
 	<string name="undo">Desfazer</string>
@@ -40,9 +40,13 @@
 	<string name="privacy">Privacidade</string>
 	<string name="reportstats">Relatar dados de desenho</string>
 	<string name="reportstats_on">Se a rede estiver disponível, os dados de desenho são enviados para live.leafdigital.com (para melhoramentos futuros).</string>
-	<string name="reportstats_off">Nenhuma informação nunca será relatada para o desenvolvedor.</string>
+	<string name="reportstats_off">Nenhuma informação será relatada para o desenvolvedor.</string>
 
 	<string name="notificationtitle">Desenhar kanji</string>
 	<string name="notificationtext">Selecione para desenhar caracteres kanji</string>
-    <string name="notificationchannel">Kanji draw</string>
+        <string name="notificationchannel">Kanji draw</string>
+	<string name="input_method_label">Teclado Kanji draw</string>
+        <string name="loaderror">Não foi possível acessar a lista kanji</string>
+        <string name="backspace">Retroceder</string>
+	<string name="enter">Executar</string>
 </resources>
